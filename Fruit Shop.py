@@ -1,12 +1,11 @@
 # https://github.com/Hamedpgm31/python-AIM-Bootcamp-projects
 
 def fruit_analysis(**kwargs):
-    count = 0
+    count = len(kwargs)
     total = 0
 
-    for fruit in kwargs:
-        count += 1
-        total += kwargs[fruit]
+    for price in kwargs.values():
+        total += price
 
     expensive = max(kwargs, key=kwargs.get)
     cheapest = min(kwargs, key=kwargs.get)
@@ -22,7 +21,7 @@ fruits = {}
 while True:
     data = input().split()
 
-    if data[0] == "finish":
+    if data[0] == "Finish":
         break
 
     fruits[data[0]] = float(data[1])
