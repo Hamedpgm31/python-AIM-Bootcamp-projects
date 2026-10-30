@@ -1,26 +1,29 @@
-# https://github.com/Hamedpgm31/python-AIM-Bootcamp-projects
 
-def fruit_analysis(**kwargs):
-    count = len(kwargs)
-    total = sum(kwargs.values())
+# https://github.com/USERNAME/REPOSITORY
 
-    expensive = max(kwargs, key=kwargs.get)
+def analyze_shopping_list(**kwargs):
+    fruits_count = len(kwargs)
+    total_cost = sum(kwargs.values())
+
+    most_expensive = max(kwargs, key=kwargs.get)
     cheapest = min(kwargs, key=kwargs.get)
 
-    print(f"You have {count} fruits in your shopping list...")
-    print(f"The total cost of the shopping list is {total}")
-    print(f"the most expensive fruit is {expensive} with the price of {kwargs[expensive]}")
+    print(f"You have {fruits_count} fruits in your shopping list")
+    print(f"The total cost of the shopping list is {total_cost}")
+    print(f"The most expensive fruit is {most_expensive} with the price of {kwargs[most_expensive]}")
     print(f"The cheapest fruit is {cheapest} with the price of {kwargs[cheapest]}")
 
 
 fruits = {}
 
 while True:
-    data = input().split()
+    user_input = input()
 
-    if data[0] == "finish":
+    if user_input == "finish":
         break
 
-    fruits[data[0]] = int(data[1])
+    name, price = user_input.split()
+    fruits[name] = int(price)
 
-fruit_analysis(**fruits)
+analyze_shopping_list(**fruits)
+
